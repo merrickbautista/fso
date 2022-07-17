@@ -1,0 +1,20 @@
+entered new note and clicked 'save'
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+
+pushed new note with content and date to notes
+
+server->browser: STATUS CODE 302 (redirect to /notes)
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server->browser: HTML code
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server->browser: main.js
+
+runs js-code and requests JSON
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server->browser: [{content: "", date: ""}, ...]
+
+event handler is called and shows notes

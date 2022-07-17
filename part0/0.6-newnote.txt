@@ -1,0 +1,9 @@
+entered new note and clicked 'save'
+
+puts data in JSON format
+pushed to notes list
+updates list on page
+sends to server
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+server->browser: STATUS CODE 201
