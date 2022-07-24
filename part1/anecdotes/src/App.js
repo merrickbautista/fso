@@ -18,10 +18,22 @@ const App = () => {
   ]
 
   const [selected, setSelected] = useState(Math.floor(Math.random() * anecdotes.length))
+  const [votes, setVotes] = useState(anecdotes.map(() => 0))
+
+  const upVote = (selected) => {
+    const copy = [...votes]
+    copy[selected] += 1
+    setVotes(copy)
+  }
 
   return (
     <div>
       <div>{anecdotes[selected]}</div>
+      <div>has {votes[selected]} votes</div>
+      <Button
+        onClick={() => upVote(selected)}
+        text='vote'
+      />
       <Button
         onClick={() => setSelected(Math.floor(Math.random() * anecdotes.length))}
         text='next anecdote'
