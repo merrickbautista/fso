@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const Header = ({text}) => <h1>{text}</h1>
 
-const Stat = ({text, number, extra=''}) => <div>{text} {number} {extra}</div> 
+const StatisticLine = ({text, number, extra=''}) => <div>{text} {number} {extra}</div> 
 
 const Statistics = ({good,neutral,bad,all}) => {
   if (all === 0) {
@@ -14,12 +14,12 @@ const Statistics = ({good,neutral,bad,all}) => {
   }
   return (
     <div>
-      <Stat text='good' number={good} />
-      <Stat text='neutral' number={neutral} />
-      <Stat text='bad' number={bad} />
-      <Stat text='all' number={all} />
-      <Stat text='average' number={(good-bad)/all} />
-      <Stat text='positive' number={good*100/all} extra='%' />
+      <StatisticLine text='good' number={good} />
+      <StatisticLine text='neutral' number={neutral} />
+      <StatisticLine text='bad' number={bad} />
+      <StatisticLine text='all' number={all} />
+      <StatisticLine text='average' number={(good-bad)/all} />
+      <StatisticLine text='positive' number={good*100/all} extra='%' />
     </div>
   )
 }
