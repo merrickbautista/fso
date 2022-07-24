@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const Header = ({text}) => <h1>{text}</h1>
 
-const Stat = ({text, number, extra=''}) => <div>{text} {number} {extra}</div>
+const Statistics = ({text, number, extra=''}) => <div>{text} {number} {extra}</div>
 
 const Button = ({onClick, text}) => (
   <button onClick={onClick}>
@@ -32,12 +32,12 @@ const App = () => {
         text='bad'
       />
       <Header text='statistics' />
-      <Stat text='good' number={good} />
-      <Stat text='neutral' number={neutral} />
-      <Stat text='bad' number={bad} />
-      <Stat text='all' number={good+neutral+bad} />
-      <Stat text='average' number={(good-bad)/(good+neutral+bad)} />
-      <Stat text='positive' number={good*100/(good+neutral+bad)} extra='%'/> 
+      <Statistics text='good' number={good} />
+      <Statistics text='neutral' number={neutral} />
+      <Statistics text='bad' number={bad} />
+      <Statistics text='all' number={good+neutral+bad} />
+      <Statistics text='average' number={(good-bad)/(good+neutral+bad)} />
+      <Statistics text='positive' number={good*100/(good+neutral+bad)} extra='%'/> 
     </div>
   )
 }
