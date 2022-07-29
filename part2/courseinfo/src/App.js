@@ -8,12 +8,14 @@ const Anecdote = ({ text, vote_count }) =>
     </div>
   </>
 
+const Header = ({text}) => <h1>{text}</h1>
+
 const Part = ({part}) => <p>{part.name} {part.exercises}</p>
 
 const Course = ({course}) => {
   return (
     <div>
-      <h1>{course.name}</h1>
+      <Header text={course.name} />
       {course.parts.map(part => <Part key={part.id} part={part} />)}
     </div>
   )
