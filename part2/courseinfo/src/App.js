@@ -1,3 +1,5 @@
+import Course from './components/Course'
+
 import { useState } from 'react'
 
 const Anecdote = ({ text, vote_count }) =>
@@ -7,20 +9,6 @@ const Anecdote = ({ text, vote_count }) =>
       has {vote_count} votes
     </div>
   </>
-
-const Header = ({text}) => <h1>{text}</h1>
-
-const Part = ({part}) => <p>{part.name} {part.exercises}</p>
-
-const Course = ({course}) => {
-  return (
-    <div>
-      <Header text={course.name} />
-      {course.parts.map(part => <Part key={part.id} part={part} />)}
-      <strong>total of {course.parts.reduce((a,b) => a + b.exercises,0)} exercises</strong>
-    </div>
-  )
-}
 
 const App = () => {
   const courses = [
