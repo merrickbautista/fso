@@ -12,7 +12,7 @@ const Header = ({text}) => <h1>{text}</h1>
 
 const Part = ({part}) => <p>{part.name} {part.exercises}</p>
 
-const Course = ({course}) => {
+function Course ({course}) {
   return (
     <div>
       <Header text={course.name} />
