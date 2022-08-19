@@ -8,7 +8,7 @@ const Filter = ({handleFilterChange}) => {
       <input onChange={handleFilterChange} />
     </div>
   )
-}
+} 
 
 const Persons = ({filtered}) => (
   <div>
